@@ -84,7 +84,7 @@ GEOR.Addons.Cadastre.showHabitationDetails = function(batiment, niveau, porte, a
            
             var details = '<div class=\'habitationDetailsMenuTitle\'> Caractéristiques générales </div>'; 
             article40Details.detent &&  article40Details.detent!='00' ? details = details + '<div> Etat d\'entretien &nbsp;:&nbsp;&nbsp;' + article40Details.detent + '</div>' : null;
-            article40Details.dsupdc &&  article40Details.dsupdc!='00' ? details = details + '<div> Surface habitable &nbsp;:&nbsp;&nbsp;' + article40Details.dsupdc + ' m²</div>' : null;
+            article40Details.dsupdc &&  article40Details.dsupdc!='00' ? details = details + '<div> Surface habitable &nbsp;:&nbsp;&nbsp;' + article40Details.dsupdc.toLocaleString(OpenLayers.Lang.getCode()) + ' m²</div>' : null;
             article40Details.dnbppr && article40Details.dnbpdc &&  article40Details.dnbpdc!='00' ? details = details + '<div> Nombre de pièces &nbsp;:&nbsp;&nbsp;' + article40Details.dnbpdc.replace(/^0+/,'') + ' dont ' + article40Details.dnbppr.replace(/^0+/,'') + ' principales</div>' : null;
             article40Details.dnbniv &&  article40Details.dnbniv!='00' ? details = details +  '<div> Nombre de niveaux &nbsp;:&nbsp;&nbsp;' + article40Details.dnbniv.replace(/^0+/,'' ) + '</div>' : null;  
                  
@@ -127,7 +127,7 @@ GEOR.Addons.Cadastre.showHabitationDetails = function(batiment, niveau, porte, a
         if(article50Details){
             return  new Ext.Panel({
                 title: 'Partie professionelle   ' + article50Details.dnudes,
-                html:'<div>Surface réelle ' + article50Details.vsurzt + ' m²</div>',
+                html:'<div>Surface réelle ' + article50Details.vsurzt.toLocaleString(OpenLayers.Lang.getCode()) + ' m²</div>',
                 layout: 'fit',
             });
         }

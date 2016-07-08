@@ -55,8 +55,8 @@ GEOR.Addons.Cadastre.displayInfoBulle = function(map, idParcelle, lonlat) {
                     html += "<tr><td class=\"infobulle-label\">" + OpenLayers.i18n('cadastrapp.infobulle.section') + " : </td><td>" + idParcelle.substr(13,2) + "</td></tr>";
                     html += "<tr><td class=\"infobulle-label\">" + OpenLayers.i18n('cadastrapp.infobulle.nplan') + " : </td><td>" + idParcelle.substr(15,4) + "</td></tr>";
                     html += "<tr><td class=\"infobulle-label\">" + OpenLayers.i18n('cadastrapp.infobulle.adresse') + " : </td><td>" + result.dnvoiri + " " + result.dindic + " " + result.cconvo + " " + result.dvoilib + "</td></tr>";
-                    html += "<tr><td class=\"infobulle-label\">" + OpenLayers.i18n('cadastrapp.contenancedgfip') + " : </td><td>" + result.dcntpa.toLocaleString() + " m²</td></tr>";
-                    html += "<tr><td class=\"infobulle-label\">" + OpenLayers.i18n('cadastrapp.sig') + " : </td><td>" + result.surfc.toLocaleString() + " m²</td></tr>";
+                    html += "<tr><td class=\"infobulle-label\">" + OpenLayers.i18n('cadastrapp.contenancedgfip') + " : </td><td>" + result.dcntpa.toLocaleString(OpenLayers.Lang.getCode()) + " m²</td></tr>";
+                    html += "<tr><td class=\"infobulle-label\">" + OpenLayers.i18n('cadastrapp.sig') + " : </td><td>" + result.surfc.toLocaleString(OpenLayers.Lang.getCode()) + " m²</td></tr>";
                     
                     if(GEOR.Addons.Cadastre.isCNIL1() || GEOR.Addons.Cadastre.isCNIL2()){
                         if (typeof(result.proprietaires) != "undefined"){
@@ -85,8 +85,8 @@ GEOR.Addons.Cadastre.displayInfoBulle = function(map, idParcelle, lonlat) {
                     html += "<thead><tr><th colspan=\"2\" style=\"text-align:center; font-weight: bold; text-transform: uppercase;\">Unité Foncière</th></tr></thead>";
 					html += "<tbody>";
 					html += "<tr><td class=\"infobulle-label\">" + OpenLayers.i18n('cadastrapp.infobulle.ccomunal') + " : </td><td>" + result.comptecommunal + "</td></tr>";
-					html += "<tr><td class=\"infobulle-label\">" + OpenLayers.i18n('cadastrapp.contenancedgfip') + " UF : </td><td>" + result.dcntpa_sum.toLocaleString() + " m²</td></tr>";
-					html += "<tr><td class=\"infobulle-label\">" + OpenLayers.i18n('cadastrapp.sig') + " UF : </td><td>" + result.sigcal_sum.toLocaleString() + " m²</td></tr>";
+					html += "<tr><td class=\"infobulle-label\">" + OpenLayers.i18n('cadastrapp.contenancedgfip') + " UF : </td><td>" + result.dcntpa_sum.toLocaleString(OpenLayers.Lang.getCode()) + " m²</td></tr>";
+					html += "<tr><td class=\"infobulle-label\">" + OpenLayers.i18n('cadastrapp.sig') + " UF : </td><td>" + result.sigcal_sum.toLocaleString(OpenLayers.Lang.getCode()) + " m²</td></tr>";
 					html += "</tbody>";
                     html += "</table>";
 					

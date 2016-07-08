@@ -64,7 +64,7 @@ GEOR.Addons.Cadastre.onClickDisplayFIUF = function(parcelleId) {
 			var result = Ext.decode(response.responseText);
 
 			// Preparation du tableau de donnees
-			var fiufGlobalInfosData = [ [ 'Surface DGFiP', result.dcntpa_sum ], [ 'Surface SIG', result.sigcal_sum ], [ 'Surface Batie', result.sigcalb_sum ] ];
+			var fiufGlobalInfosData = [ [ 'Surface DGFiP', result.dcntpa_sum.toLocaleString(OpenLayers.Lang.getCode()) ], [ 'Surface SIG', result.sigcal_sum.toLocaleString(OpenLayers.Lang.getCode()) ], [ 'Surface Batie', result.sigcalb_sum.toLocaleString(OpenLayers.Lang.getCode()) ] ];
 
 			// Chargement dans le store correspondant
 			fiufGlobalInfosStore.loadData(fiufGlobalInfosData, false);
