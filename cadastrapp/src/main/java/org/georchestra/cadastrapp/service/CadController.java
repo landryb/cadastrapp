@@ -194,9 +194,9 @@ public class CadController {
 				}
 				
 	
+				queryFilter.append(" AND ( ");
 				// If table contains cgocommune
 				if(!deps.isEmpty()){
-					queryFilter.append(" AND ( ");
 					boolean isFirstDep = true;
 					for (String dep : deps){
 						if(!isFirstDep){
@@ -209,15 +209,17 @@ public class CadController {
 							isFirstDep = false;
 						}
 					}		
-					queryFilter.append(" ) ");
 				}
 				if(!communes.isEmpty()){
-					queryFilter.append(" AND ");
+					if(!deps.isEmpty()) {
+						queryFilter.append(" OR ");
+					}
 					queryFilter.append(tableAlias);
 					queryFilter.append("cgocommune IN (");
 					queryFilter.append(createListToStringQuery(communes));					
 					queryFilter.append(" ) ");
 				}			
+				queryFilter.append(" ) ");
 			}			
 		}
 		else{
